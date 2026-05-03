@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Abdullah - The Legend</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #ffcccb;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  width: 250px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ff4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff1a1a;
+}
+
+.footer {
+  background: #000;
+  padding: 20px;
+  font-size: 14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<div class="section hero">
+  <h1>👑 Muhammad Abdullah Khan 👑</h1>
+  <p class="subtitle">Meet the Most Annoying Yet Amazing Brother Alive</p>
+  <p class="subtitle">Certified Drama King | Snack Thief | Family Hero</p>
+  <img src="image" width="220" style="border-radius:15px;">
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <h2>About Abdullah 🤔</h2>
+  <div class="card">
+    <p><b>Name:</b> Abdullah (a.k.a WiFi Password Hacker)</p>
+    <p><b>Skills:</b></p>
+    <p>😴 Sleeping 12 hours straight</p>
+    <p>🍟 Finishing snacks in 3 minutes</p>
+    <p>😈 Annoying sister (expert level)</p>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="section">
+  <h2>Legendary Achievements 🏆</h2>
+  <div class="card">🏆 Fastest Maggi Maker Alive</div>
+  <div class="card">🏆 Survived Mama's Anger 100+ Times</div>
+  <div class="card">🏆 Last Slice Pizza Thief</div>
+</div>
+
+<!-- GALLERY -->
+<div class="section">
+  <h2>Memory Vault 📸</h2>
+  <div class="gallery">
+    <img src="image.1.jpg">
+    <img src="image2.jpg">
+    <img src="image4.jpg">
+  </div>
+</div>
+
+<!-- ROAST -->
+<div class="section">
+  <h2>Roast Zone 🔥</h2>
+  <p id="roastText">Click the button to reveal truth 👇</p>
+  <button onclick="showRoast()">Reveal Roast</button>
+</div>
+
+<!-- LOVE -->
+<div class="section">
+  <h2>❤️ Real Talk</h2>
+  <p>No matter how much I roast Abdullah, he is my biggest support, my partner in crime, and my favorite human forever.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Made with love, sarcasm, and stolen childhood memories 💖
+</div>
+
+<script>
+function showRoast() {
+  const roasts = [
+    "He looks for his phone while holding it.",
+    "Thinks he is smart but still asks for WiFi password daily.",
+    "Eats like there is no tomorrow.",
+    "Professional procrastinator since birth."
+  ];
+
+  const random = roasts[Math.floor(Math.random() * roasts.length)];
+  document.getElementById("roastText").innerText = random;
+}
+</script>
+
+</body>
+</html>
