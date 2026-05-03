@@ -1,161 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Abdullah - The Legend</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Muhammad Abdullah - The Legend</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
-  text-align: center;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+      background-size: 600% 600%;
+      animation: gradientMove 10s ease infinite;
+      color: white;
+      text-align: center;
+    }
 
-.section {
-  padding: 60px 20px;
-}
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
 
-h1, h2 {
-  margin-bottom: 20px;
-}
+      50% {
+        background-position: 100% 50%;
+      }
 
-.hero h1 {
-  font-size: 40px;
-}
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-.subtitle {
-  font-size: 18px;
-  color: #ffcccb;
-}
+    .section {
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s forwards;
+    }
 
-.card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  margin: 15px;
-  border-radius: 15px;
-  display: inline-block;
-  width: 250px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s;
-}
+    .section:nth-child(even) {
+      animation-delay: 0.3s;
+    }
 
-.card:hover {
-  transform: scale(1.05);
-}
+    .section:nth-child(odd) {
+      animation-delay: 0.6s;
+    }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.gallery img {
-  width: 200px;
-  margin: 10px;
-  border-radius: 12px;
-  transition: transform 0.3s;
-}
+    h1,
+    h2 {
+      margin-bottom: 20px;
+    }
 
-.gallery img:hover {
-  transform: scale(1.1);
-}
+    .hero h1 {
+      font-size: 42px;
+      animation: bounce 2s infinite;
+    }
 
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #ff4d4d;
-  color: white;
-  cursor: pointer;
-}
+    @keyframes bounce {
 
-button:hover {
-  background: #ff1a1a;
-}
+      0%,
+      100% {
+        transform: translateY(0);
+      }
 
-.footer {
-  background: #000;
-  padding: 20px;
-  font-size: 14px;
-}
+      50% {
+        transform: translateY(-10px);
+      }
+    }
 
-</style>
+    .subtitle {
+      font-size: 18px;
+      color: #ffcccb;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      margin: 15px;
+      border-radius: 15px;
+      display: inline-block;
+      width: 250px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 12px;
+      transition: transform 0.4s, filter 0.4s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.2) rotate(3deg);
+      filter: brightness(1.2);
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      background: #ff4d4d;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    button:hover {
+      background: #ff1a1a;
+      transform: scale(1.1);
+    }
+
+    .footer {
+      background: #000;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* Floating Emojis */
+    .emoji {
+      position: fixed;
+      font-size: 24px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO SECTION -->
-<div class="section hero">
-  <h1>👑 Muhammad Abdullah Khan 👑</h1>
-  <p class="subtitle">Meet the Most Annoying Yet Amazing Brother Alive</p>
-  <p class="subtitle">Certified Drama King | Snack Thief | Family Hero</p>
-  <img src="image.jpeg" width="220" style="border-radius:15px;">
-</div>
-
-<!-- ABOUT -->
-<div class="section">
-  <h2>About Abdullah 🤔</h2>
-  <div class="card">
-    <p><b>Name:</b> Abdullah (a.k.a WiFi Password Hacker)</p>
-    <p><b>Skills:</b></p>
-    <p>😴 Sleeping 12 hours straight</p>
-    <p>🍟 Finishing snacks in 3 minutes</p>
-    <p>😈 Annoying sister (expert level)</p>
+  <!-- HERO -->
+  <div class="section hero">
+    <h1>👑 Muhammad Abdullah 👑</h1>
+    <p class="subtitle">Meet the Most Annoying Yet Amazing Brother </p>
+    <p class="subtitle">Certified Drama King | Snack Thief | Family Hero</p>
+    <img src="image.1.jpg" width="220" style="border-radius:15px;">
   </div>
-</div>
 
-<!-- ACHIEVEMENTS -->
-<div class="section">
-  <h2>Legendary Achievements 🏆</h2>
-  <div class="card">🏆 Fastest Maggi Maker Alive</div>
-  <div class="card">🏆 Survived Mama's Anger 100+ Times</div>
-  <div class="card">🏆 Last Slice Pizza Thief</div>
-</div>
-
-<!-- GALLERY -->
-<div class="section">
-  <h2>Memory Vault 📸</h2>
-  <div class="gallery">
-    <img src="image.1.jpeg">
-    <img src="image2.jpeg">
-    <img src="image4.mp4">
+  <!-- ABOUT -->
+  <div class="section">
+    <h2>About Abdullah 🤔</h2>
+    <div class="card">
+      <p><b>Name:</b> Abdullah (a.k.a WiFi Password Hacker)</p>
+      <p>😴 Sleeping 12 hours straight</p>
+      <p>🍟 Finishing snacks in 3 minutes</p>
+      <p>😈 Annoying sister (expert level)</p>
+    </div>
   </div>
-</div>
 
-<!-- ROAST -->
-<div class="section">
-  <h2>Roast Zone 🔥</h2>
-  <p id="roastText">Click the button to reveal truth 👇</p>
-  <button onclick="showRoast()">Reveal Roast</button>
-</div>
+  <!-- ACHIEVEMENTS -->
+  <div class="section">
+    <h2>Legendary Achievements 🏆</h2>
+    <div class="card">🏆 Fastest Maggi Maker Alive</div>
+    <div class="card">🏆 Survived Mama's Anger 100+ Times</div>
+    <div class="card">🏆 Last Slice Pizza Thief</div>
+  </div>
 
-<!-- LOVE -->
-<div class="section">
-  <h2>❤️ Real Talk</h2>
-  <p>No matter how much I roast Abdullah, he is my biggest support, my partner in crime, and my favorite human forever.</p>
-</div>
+  <!-- GALLERY -->
+  <div class="section">
+    <h2>Memory Vault 📸</h2>
+    <div class="gallery">
+      <img src="image.jpeg">
+      <img src="image2.jpeg">
+      <video width="220" controls>
+        <source src="image4.mp4" type="video/mp4">
+      </video>
+    </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  Made with love, sarcasm, and stolen childhood memories 💖
-</div>
+    <!-- ROAST -->
+    <div class="section">
+      <h2>Roast Zone 🔥</h2>
+      <p id="roastText">Click below 😈</p>
+      <button onclick="showRoast(); launchConfetti();">Reveal Roast</button>
+    </div>
 
-<script>
-function showRoast() {
-  const roasts = [
-    "He looks for his phone while holding it.",
-    "Thinks he is smart but still asks for WiFi password daily.",
-    "Eats like there is no tomorrow.",
-    "Professional procrastinator since birth."
-  ];
+    <!-- LOVE -->
+    <div class="section">
+      <h2>❤️ Real Talk</h2>
+      <p>No matter how much I roast Abdullah, he is my biggest support and my favorite human.</p>
+    </div>
 
-  const random = roasts[Math.floor(Math.random() * roasts.length)];
-  document.getElementById("roastText").innerText = random;
-}
-</script>
+    <!-- FOOTER -->
+    <div class="footer">
+      Made with love, sarcasm, and stolen childhood memories 💖
+    </div>
+
+    <script>
+      function showRoast() {
+        const roasts = [
+          "He looks for his phone while holding it.",
+          "Thinks he is smart but still asks for WiFi password daily.",
+          "Eats like there is no tomorrow.",
+          "Professional procrastinator since birth."
+        ];
+
+        const random = roasts[Math.floor(Math.random() * roasts.length)];
+        document.getElementById("roastText").innerText = random;
+      }
+
+      // Floating emojis generator
+      setInterval(() => {
+        const emoji = document.createElement("div");
+        emoji.classList.add("emoji");
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.innerText = ["😂", "🔥", "💀", "🍟", "👑"][Math.floor(Math.random() * 5)];
+        document.body.appendChild(emoji);
+
+        setTimeout(() => {
+          emoji.remove();
+        }, 6000);
+      }, 800);
+
+      // Confetti effect
+      function launchConfetti() {
+        for (let i = 0; i < 20; i++) {
+          let conf = document.createElement('div');
+          conf.className = 'emoji';
+          conf.innerText = '🎉';
+          conf.style.left = Math.random() * 100 + 'vw';
+          document.body.appendChild(conf);
+          setTimeout(() => conf.remove(), 3000);
+        }
+      }
+    </script>
 
 </body>
+
 </html>
